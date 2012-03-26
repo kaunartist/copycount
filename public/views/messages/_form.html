@@ -1,0 +1,12 @@
+<form data-formfor-message="controllers.messages.emptyMessage" data-event-submit="controllers.messages.create">
+  <div data-addclass-toolong="message.toolong" data-bind="message.remaining"></div>
+  <input placeholder="Enter a message." size="140" data-bind="message.body" />
+
+  <br />
+  <input type="text" placeholder="http://" name="url" />
+  <br />
+  <input type="text" placeholder="DD/MM/YYYY" id="datepicker" name="date" />@
+  <input type="text" placeholder="HH:MM" name="time" size="5" maxlength="5" />
+  <input type="submit" value="Save" />
+</form>
+

@@ -1,0 +1,14 @@
+<h1>Campaigns</h1>
+
+<ul id="items">
+  <li data-foreach-campaign="Campaign.all" data-mixin="animation">
+    <a data-route="campaign" data-bind="campaign.title"></a>
+    <span data-bind="campaign.type"></span>
+    <a data-event-click="campaign.export">Export to CSV</a>
+    <a data-event-click="campaign.destroy">x</a>
+  </li>
+</ul>
+
+<br />
+
+<div data-partial="campaigns/_form"></div>

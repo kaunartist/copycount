@@ -1,0 +1,31 @@
+<a data-route="{'controller': 'campaigns', 'action': 'index'}">Back to Campaign Listing</a>
+
+<p>
+  <b>Title:</b>
+  <span data-bind="campaign.title"></span>
+</p>
+
+<p>
+  <b>Type:</b>
+  <span data-bind="campaign.message_type"></span>
+</p>
+
+<div data-foreach-camp="campaign">
+  <form data-formfor-message="controllers.campaigns.emptyMessage" data-event-submit="camp.create">
+    <div data-addclass-toolong="message.toolong" data-bind="message.remaining"></div>
+    <input placeholder="Enter a message." size="140" data-bind="message.body" />
+
+    <br />
+    <input type="text" placeholder="http://" name="url" />
+    <br />
+    <input type="text" placeholder="DD/MM/YYYY" id="datepicker" name="publishdate" />@
+    <input type="text" placeholder="HH:MM" name="publishtime" size="5" maxlength="5" />
+    <input type="submit" value="Save Message" />
+  </form>
+</div>
+
+<ul id="messages">
+  <li data-foreach-message="campaign.messages" data-mixin="animation">
+    <span data-bind="message.publishdate"></span>,<span data-bind="message.publishtime"></span> "<span data-bind="message.body"></span>"<span data-bind="message.link_url"></span>
+  </li>
+</ul>
