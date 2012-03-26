@@ -10,19 +10,17 @@
   <span data-bind="campaign.message_type"></span>
 </p>
 
-<div data-foreach-camp="campaign">
-  <form data-formfor-message="controllers.campaigns.emptyMessage" data-event-submit="camp.create">
-    <div data-addclass-toolong="message.toolong" data-bind="message.remaining"></div>
-    <input placeholder="Enter a message." size="140" data-bind="message.body" />
+<form data-context="campaign" data-formfor-message="controllers.campaigns.emptyMessage" data-event-submit="campaign.createMessage">
+  <div data-addclass-toolong="message.toolong" data-bind="message.remaining"></div>
+  <input placeholder="Enter a message." size="140" data-bind="message.body" />
 
-    <br />
-    <input type="text" placeholder="http://" name="url" />
-    <br />
-    <input type="text" placeholder="DD/MM/YYYY" id="datepicker" name="publishdate" />@
-    <input type="text" placeholder="HH:MM" name="publishtime" size="5" maxlength="5" />
-    <input type="submit" value="Save Message" />
-  </form>
-</div>
+  <br />
+  <input type="text" placeholder="http://" name="url" />
+  <br />
+  <input type="text" placeholder="DD/MM/YYYY" id="datepicker" name="publishdate" />@
+  <input type="text" placeholder="HH:MM" name="publishtime" size="5" maxlength="5" />
+  <input type="submit" value="Save Message" />
+</form>
 
 <ul id="messages">
   <li data-foreach-message="campaign.messages" data-mixin="animation">
