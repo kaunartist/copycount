@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
+    @campaign = @message.campaign
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,13 +42,14 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
+    @message.campaign = Campaign.find params[:campaign_id]
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to @message.campaign, notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @message.campaign }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end

@@ -5,6 +5,14 @@
   <%= @campaign.title %>
 </p>
 
+<%= render 'messages/form' %>
+
+<ul>
+  <% @campaign.messages.each do |m| %>
+    <li><%= link_to m.body, campaign_message_url(@campaign, m) %></li>
+  <% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_campaign_path(@campaign) %> |
 <%= link_to 'Back', campaigns_path %>

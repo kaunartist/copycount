@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1.json
   def show
     @campaign = Campaign.find(params[:id])
+    @message = Message.new
 
     respond_to do |format|
       format.html # show.html.erb
