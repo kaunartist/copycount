@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
+gem 'batman-rails', :git => 'git://github.com/Shopify/batman-rails.git', :branch => 'latest-batman'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

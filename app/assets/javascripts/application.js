@@ -12,4 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+// Batman.js and its adapters
+//= require batman/batman
+//= require batman/batman.jquery
+//= require batman/batman.rails
+
+//= require creator
+
+//= require_tree ./models
+//= require_tree ./controllers
+//= require_tree ./helpers
+
+
 //= require_tree .
+// Run the Batman app
+$(document).ready(function(){
+  Creator.run();
+});
+
